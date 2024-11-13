@@ -1,6 +1,6 @@
 # Maths quiz game, 10 questions, time how long to answer all of them. Wanted to assign num1 and num2 in the main loop and pass them in, 
 # but if all operations used the same range pool multiplication questions wopuld be brutal, not to mention the looping in div would make it irrelevant for those questions.
-# Tech with Tims was a lot smaller, but he used the same small range for all questions, and didnt do division.
+# Tech with Tim's was a lot smaller, but he used the same small range for all questions, and didnt do division.
 
 import random, os, time
 
