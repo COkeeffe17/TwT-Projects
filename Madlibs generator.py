@@ -1,4 +1,4 @@
-# Madlibs generator; user is asked to enter words that are then put into a story, stored in a text file, because that is more interesting and dynamic.
+# Madlibs generator; user is asked to enter words that are then put into a story, stored in a text file (story.txt), because that is more interesting and dynamic.
 
 import string, os
 
