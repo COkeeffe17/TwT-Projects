@@ -1,6 +1,3 @@
-# WPM test. This one was a struggle. Between not knowing what curses is and how to use it and backspace giving me way too much pain, this took longer than a project of this difficulty should have.
-# I watched the beginning of Tech with Tim's section on this as he displays how curses works before building the test, which I did myself.
-
 import curses, time, os
 from curses import wrapper
 
@@ -29,16 +26,16 @@ def main(stdscr):
             start = time.time()
 
         # Redraw the original text each loop to ensure it stays visible
-        stdscr.addstr(0, 0, original, curses.color_pair(1))
+        stdscr.addstr(1, 0, original, curses.color_pair(1))
 
         # Display the typed text with colors for correctness
         for i, char in enumerate(typed_text):
             if i < len(original) and char == original[i]:
-                stdscr.addstr(0, i, char, curses.color_pair(2))  # Correct character
+                stdscr.addstr(1, i, char, curses.color_pair(2))  # Correct character
             elif i < len(original):
-                stdscr.addstr(0, i, char, curses.color_pair(3))  # Incorrect character
+                stdscr.addstr(1, i, char, curses.color_pair(3))  # Incorrect character
             else:
-                stdscr.addstr(0, i, char, curses.color_pair(3))  # Extra characters (if any)
+                stdscr.addstr(1, i, char, curses.color_pair(3))  # Extra characters (if any)
 
 
         # Set cursor position
@@ -52,7 +49,7 @@ def main(stdscr):
         wpm = WPM(start, correct)
 
         # WPM section
-        stdscr.addstr(1, 0, f"WPM: {wpm}", curses.color_pair(1))
+        stdscr.addstr(0, 0, f"WPM: {wpm}   ", curses.color_pair(1))
 
         # Refresh screen
         stdscr.refresh()
